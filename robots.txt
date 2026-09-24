@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /logiciel
+
+Sitemap: https://kemenn.be/sitemap.xml
