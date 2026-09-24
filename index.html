@@ -373,8 +373,8 @@ nav.top .lpick{margin-right:10px}
 #app iframe{flex:1;border:0;width:100%;background:#f3f3f1;border-radius:12px 12px 0 0}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv,.st,.v,.mailc,.v1 .d,.v1 .ring,.v1 .lbl,.sent,.orderc .ok,.orderc .rows div{opacity:1!important;transform:none!important}.v2 .after{clip-path:none!important}.mac{transform:none}.st:not(.on),.v:not(.on){opacity:0!important}}
 @media (max-width:860px){nav.top .links{display:none}nav.top .pill{margin-left:auto}.tf1,.tf2{display:none}
-  .story{height:auto}.story .pin{position:static;height:auto;display:block;padding:80px 0}.story .grid{grid-template-columns:1fr;gap:0}.stxt{min-height:0}.svis{display:none}
-  .st{position:static;opacity:1;transform:none;margin-bottom:56px}.st .mv{display:block;margin-top:22px;border-radius:22px;overflow:hidden;background:var(--light)}.dots{display:none}
+  .story{height:340vh}.story .pin{position:sticky;top:52px;height:calc(100svh - 52px);display:flex;align-items:center;padding:10px 0 18px}.story .grid{grid-template-columns:1fr;gap:18px;align-items:center}.story .grid>div:first-child{order:2}.stxt{min-height:190px}.svis{display:block;order:1;width:min(100%,44svh);max-height:44svh;margin:0 auto;border-radius:22px}
+  .st{position:absolute;inset:0;opacity:0;transform:translateY(18px);margin:0}.st.on{opacity:1;transform:none}.st h3{font-size:clamp(25px,7.2vw,34px)}.st p{font-size:16px;margin-top:10px;max-width:none}.st .n{font-size:14px;margin-bottom:8px}.st .mv,.mvh{display:none}.dots{display:flex;justify-content:center;margin-top:18px}
   .els{grid-template-columns:repeat(3,1fr);gap:26px 10px}.plans{grid-template-columns:1fr}section{padding:90px 0}}
 @media (min-width:861px){.st .mv{display:none}}
 @media (max-width:480px){.hero{padding-top:96px}.cta{flex-direction:column;gap:16px}.el .ic{width:72px;height:72px;border-radius:20px}}
@@ -740,7 +740,7 @@ let cT;function count(){const el=$('#amt'),to=2344;if(RM){el.textContent=to.toLo
 function onScroll(){const y=scrollY,vh=innerHeight;
   if(!RM&&hs){const r=hs.getBoundingClientRect(),k=Math.max(0,Math.min(1,1-r.top/vh));hs.style.transform=`scale(${.92+k*.1})`}
   const wr=wordsBox.getBoundingClientRect(),den=innerWidth<=860?Math.max(120,wr.height*.9):vh*.6,p=Math.max(0,Math.min(1,(vh*.85-wr.top)/den));W.forEach((w,i)=>w.classList.toggle('on',p*W.length>i+.2));
-  if(innerWidth>860){const r=story.getBoundingClientRect(),tot=story.offsetHeight-vh,pr=Math.max(0,Math.min(.999,-r.top/tot));setStep(pr<.1?0:pr<.4?1:pr<.7?2:3)}}
+  {const r=story.getBoundingClientRect(),tot=story.offsetHeight-vh,pr=Math.max(0,Math.min(.999,-r.top/tot));setStep(pr<.1?0:pr<.4?1:pr<.7?2:3)}}
 addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
 
 
